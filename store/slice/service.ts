@@ -1,18 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useSelector } from 'react-redux'
 
-interface IServiceType {
-  lang: string
-  theme: string
+enum THEME {
+    LIGHT = 'Light',
+    DARK = 'Dark'
 }
 
-const useSelectorService: TypedUseSelectorHook<{ service: IServiceType }> =
-  useSelector
+enum LANG {
+  RU = 'Ru',
+  ENG = 'Eng'
+}
 
+const BACKGROUND = {
+  [THEME.LIGHT]: 'white',
+  [THEME.DARK]: '#313131'
+}
+
+const initialState = { lang: LANG.RU, theme: THEME.LIGHT }
+const useSelectorService: TypedUseSelectorHook<{
+  service: typeof initialState
+}> = useSelector
 
 const service = createSlice({
   name: 'service',
-  initialState: { lang: 'ru', theme: 'light' },
+  initialState,
   reducers: {
     changeLang: (state, action) => {
       state.lang = action.payload
@@ -24,5 +35,5 @@ const service = createSlice({
 })
 
 export const { changeLang, changeTheme } = service.actions
-export { useSelectorService }
+export { useSelectorService, THEME, LANG, BACKGROUND }
 export default service.reducer

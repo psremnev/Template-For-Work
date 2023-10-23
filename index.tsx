@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client'
-import Base from 'Base'
+import Application from 'components/Application'
 import { Provider } from 'react-redux';
 import ApplicationStore from 'store/application';
 import './index.less';
@@ -7,6 +7,6 @@ import './index.less';
 const root = createRoot(document.querySelector('#root'))
 root.render(
   <Provider store={ApplicationStore}>
-    <Base />
+    <Application />
   </Provider>
 )

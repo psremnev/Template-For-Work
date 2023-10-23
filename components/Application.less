@@ -1,0 +1,46 @@
+.application {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid lightgray;
+        padding: 6px;
+
+        h1 {
+            margin: 6px;
+        }
+    }
+
+    main {
+        margin: auto;
+    }
+
+    button {
+        height: 30px;
+        margin-right: 4px;
+        background: #d3c7e9d6;
+        padding: 6px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #baafced6;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .application {
+        header {
+            flex-direction: column;
+        }
+    }
+}
