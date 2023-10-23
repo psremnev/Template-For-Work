@@ -1,6 +1,9 @@
 const path = require('path')
 const webpack = require('webpack')
+// плагин для копирования файлов
 const CopyPlugin = require('copy-webpack-plugin')
+// плагин для обработки относительных путей из tsconfig, example: ../store/slice/service vs store/slice/service
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 module.exports = {
   mode: 'development',
@@ -38,7 +41,12 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js']
+    extensions: ['.tsx', '.ts', '.js'],
+    plugins: [
+      new TsconfigPathsPlugin({
+        configFile: path.resolve(__dirname, 'tsconfig.json')
+      })
+    ]
   },
   plugins: [
     new webpack.ProvidePlugin({

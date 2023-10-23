@@ -1,7 +1,7 @@
 import './Base.less'
-import { useSelectorService } from '../store/slice/service'
+import { useSelectorService } from 'store/slice/service'
 import { useDispatch } from 'react-redux'
-import { changeLang, changeTheme } from '../store/slice/service'
+import { changeLang, changeTheme } from 'store/slice/service'
 
 export default function Base() {
   const application = useSelectorService((state) => state.service)
