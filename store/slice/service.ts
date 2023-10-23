@@ -11,11 +11,6 @@ enum LANG {
   ENG = 'Eng'
 }
 
-const BACKGROUND = {
-  [THEME.LIGHT]: 'white',
-  [THEME.DARK]: '#313131'
-}
-
 const initialState = { lang: LANG.RU, theme: THEME.LIGHT }
 const useSelectorService: TypedUseSelectorHook<{
   service: typeof initialState
@@ -35,5 +30,5 @@ const service = createSlice({
 })
 
 export const { changeLang, changeTheme } = service.actions
-export { useSelectorService, THEME, LANG, BACKGROUND }
+export { useSelectorService, THEME, LANG }
 export default service.reducer

@@ -1,3 +1,5 @@
+@theme-dark: #121212;
+
 .application {
     display: flex;
     flex-direction: column;
@@ -35,6 +37,16 @@
     button:hover {
         background: #baafced6;
     }
+}
+
+.theme-Dark {
+  background: @theme-dark;
+  color: white;
+}
+
+.theme-Light {
+  background: white;
+  color: @theme-dark;
 }
 
 @media screen and (max-width: 500px) {

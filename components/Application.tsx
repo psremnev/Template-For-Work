@@ -1,16 +1,12 @@
 import './Application.less'
-import { useSelectorService, THEME, BACKGROUND } from 'store/slice/service'
-import { useMemo } from 'react'
+import { useSelectorService } from 'store/slice/service'
 import HeaderRight from 'components/HeaderRight/HeaderRight'
 
 export default function() {
   const application = useSelectorService((state) => state.service)
-  const background = useMemo(() => {
-    return application.theme === THEME.LIGHT ? BACKGROUND.Light : BACKGROUND.Dark
-  }, [application])
   
   return (
-    <div className='application' style={{ background }}>
+    <div className={`application theme-${application.theme}`}>
       <header>
         <h1>Application Name</h1>
         <HeaderRight />
