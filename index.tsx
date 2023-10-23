@@ -1,10 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import Element from './components/Element'
+import Base from './components/Base'
 import './index.less';
 
-const Demo = () => {
-  return <Element />
-}
-
 const root = createRoot(document.querySelector('#root'))
-root.render(<Demo />)
+root.render(<Base />)

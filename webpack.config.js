@@ -46,7 +46,6 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: 'public', to: 'public' }, // copy public to build
         { from: 'build', to: path.resolve(__dirname, 'docs') }, // copy build to GitHub Pages folder
         { from: 'index.html', to: path.resolve(__dirname, 'docs') } // copy index.html to GitHub Pages folder
       ]
